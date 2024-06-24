@@ -1,0 +1,18 @@
+{
+  "dependencies" : [
+    {
+      "id" : "43E7C335-FA22-4900-A384-D13DF8F8CF14",
+      "name" : "Ansi256Color",
+      "use_local" : true
+    }
+  ],
+  "targets" : [
+    {
+      "dependencies" : [
+        "Ansi256Color"
+      ],
+      "id" : "51DB72BD-DB32-4796-81D9-F37EFABB7F62",
+      "name" : "AnsiRgb"
+    }
+  ]
+}
