@@ -6,6 +6,10 @@ import Foundation
 public struct Ansi256Color {
     public let value: UInt8
 
+    public var intValue: Int {
+        Int(value)
+    }
+
     public init(_ value: UInt8) {
         self.value = value
     }

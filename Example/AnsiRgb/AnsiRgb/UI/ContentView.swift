@@ -5,32 +5,32 @@ import SwiftUI
 import Ansi256Color
 
 struct ContentView: View {
-    let size: CGFloat = 40
 
     var body: some View {
         VStack {
+            Text("Named colors")
             HStack {
-                Color(ansi256: Ansi256Color.red.value)
-                    .frame(width: size, height: size)
-                Color(ansi256: Ansi256Color.green.value)
-                    .frame(width: size, height: size)
-                Color(ansi256: Ansi256Color.yellow.value)
-                    .frame(width: size, height: size)
-                Color(ansi256: Ansi256Color.blue.value)
-                    .frame(width: size, height: size)
-                Color(ansi256: Ansi256Color.pink.value)
-                    .frame(width: size, height: size)
-                Color(ansi256: Ansi256Color.cyan.value)
-                    .frame(width: size, height: size)
-                Color(ansi256: Ansi256Color.white.value)
-                    .frame(width: size, height: size)
+                ColorSwatch(colorCode: Ansi256Color.red.intValue)
+                ColorSwatch(colorCode: Ansi256Color.green.intValue)
+                ColorSwatch(colorCode: Ansi256Color.yellow.intValue)
+                ColorSwatch(colorCode: Ansi256Color.blue.intValue)
+                ColorSwatch(colorCode: Ansi256Color.pink.intValue)
+                ColorSwatch(colorCode: Ansi256Color.cyan.intValue)
+                ColorSwatch(colorCode: Ansi256Color.white.intValue)
             }
+            Text("Standard colors")
             HStack {
-                ForEach(0..<16) {
-                    Color(ansi256: $0)
-                        .frame(width: size, height: size)
+                ForEach(0..<8) {
+                    ColorSwatch(colorCode: $0)
                 }
             }
+            Text("High-intensity colors")
+            HStack {
+                ForEach(8..<16) {
+                    ColorSwatch(colorCode: $0)
+                }
+            }
+            Text("216 colors")
             VStack {
                 ForEach(0..<6) { row in
                     HStack {
@@ -38,22 +38,21 @@ struct ContentView: View {
                         let to = from + 36
                         let range = from..<to
                         ForEach(range, id: \.self) {
-                            Color(ansi256: $0)
-                                .frame(width: size, height: size)
+                            ColorSwatch(colorCode: $0)
                         }
                     }
                 }
             }
+            Text("Grayscale colors")
             HStack {
                 ForEach(232..<256) {
-                    Color(ansi256: $0)
-                        .frame(width: size, height: size)
+                    ColorSwatch(colorCode: $0)
                 }
             }
+            Text("Grayscale colors by intensity")
             HStack {
                 ForEach(0..<24) {
-                    Color(ansi256GrayScale: Double($0) / 24 )
-                        .frame(width: size, height: size)
+                    ColorSwatchGrayScale(scale: $0)
                 }
             }
         }
