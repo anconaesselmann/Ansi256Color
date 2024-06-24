@@ -25,14 +25,10 @@ public extension Color {
     }
 
     init(ansi256GrayScale value: Double) {
-        var value = value
-        if value <= 0 {
-            value = 0
-        }
-        if value >= 1 {
-            value = 1
-        }
-        let scaled = Int(value * 24)
-        self.init(ansi256: 232 + scaled)
+        self = Color(Ansi256Color(grayScale: value).rgb())
+    }
+
+    init(ansi256 value: Ansi256Color) {
+        self = Color(value.rgb())
     }
 }

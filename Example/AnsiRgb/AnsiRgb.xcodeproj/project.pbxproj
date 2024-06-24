@@ -17,6 +17,9 @@
 		97234F282C29288500B363EE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97234F272C29288500B363EE /* Preview Assets.xcassets */; };
 		97435E632C2955AA00EDBE54 /* ColorSwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97435E622C2955AA00EDBE54 /* ColorSwatch.swift */; };
 		97435E652C2955BB00EDBE54 /* ColorSwatchGrayScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97435E642C2955BB00EDBE54 /* ColorSwatchGrayScale.swift */; };
+		97435E672C29E29400EDBE54 /* Text+hightControstForegroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97435E662C29E29400EDBE54 /* Text+hightControstForegroundColor.swift */; };
+		97435E692C29E2E100EDBE54 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97435E682C29E2E100EDBE54 /* ContentViewModel.swift */; };
+		97435E6B2C29E4CA00EDBE54 /* Color+hightContrastFontColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97435E6A2C29E4CA00EDBE54 /* Color+hightContrastFontColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		97234F292C29288500B363EE /* README.MD */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.MD; path = ../../README.MD; sourceTree = "<group>"; };
 		97435E622C2955AA00EDBE54 /* ColorSwatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSwatch.swift; sourceTree = "<group>"; };
 		97435E642C2955BB00EDBE54 /* ColorSwatchGrayScale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSwatchGrayScale.swift; sourceTree = "<group>"; };
+		97435E662C29E29400EDBE54 /* Text+hightControstForegroundColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+hightControstForegroundColor.swift"; sourceTree = "<group>"; };
+		97435E682C29E2E100EDBE54 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		97435E6A2C29E4CA00EDBE54 /* Color+hightContrastFontColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+hightContrastFontColor.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +72,8 @@
 			isa = PBXGroup;
 			children = (
 				97234F162C29288400B363EE /* LoadableResult.swift */,
+				97435E662C29E29400EDBE54 /* Text+hightControstForegroundColor.swift */,
+				97435E6A2C29E4CA00EDBE54 /* Color+hightContrastFontColor.swift */,
 				97234F182C29288500B363EE /* Constants */,
 				97234F1B2C29288500B363EE /* App */,
 				97234F1E2C29288500B363EE /* UI */,
@@ -98,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				97234F1F2C29288500B363EE /* ContentView.swift */,
+				97435E682C29E2E100EDBE54 /* ContentViewModel.swift */,
 				97435E622C2955AA00EDBE54 /* ColorSwatch.swift */,
 				97435E642C2955BB00EDBE54 /* ColorSwatchGrayScale.swift */,
 			);
@@ -189,12 +198,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				97234F222C29288500B363EE /* AppInitializer.swift in Sources */,
+				97435E672C29E29400EDBE54 /* Text+hightControstForegroundColor.swift in Sources */,
 				97234F242C29288500B363EE /* AppState.swift in Sources */,
 				97435E652C2955BB00EDBE54 /* ColorSwatchGrayScale.swift in Sources */,
 				97234F1D2C29288500B363EE /* AnsiRgbApp.swift in Sources */,
+				97435E692C29E2E100EDBE54 /* ContentViewModel.swift in Sources */,
 				97234F172C29288400B363EE /* LoadableResult.swift in Sources */,
 				97234F202C29288500B363EE /* ContentView.swift in Sources */,
 				97435E632C2955AA00EDBE54 /* ColorSwatch.swift in Sources */,
+				97435E6B2C29E4CA00EDBE54 /* Color+hightContrastFontColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

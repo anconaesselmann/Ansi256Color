@@ -6,17 +6,34 @@ import Ansi256Color
 
 struct ContentView: View {
 
+    @StateObject
+    var vm = ContentViewModel()
+
     var body: some View {
         VStack {
+            ColorPicker(selection: $vm.pickedColor, supportsOpacity: false) {
+                Text("Pick a color")
+            }
+            HStack {
+                Color(vm.pickedColor).frame(width: 40, height: 40)
+                ColorSwatch(colorCode: vm.pickedAnsiColor.intValue)
+            }
             Text("Named colors")
             HStack {
                 ColorSwatch(colorCode: Ansi256Color.red.intValue)
                 ColorSwatch(colorCode: Ansi256Color.green.intValue)
                 ColorSwatch(colorCode: Ansi256Color.yellow.intValue)
                 ColorSwatch(colorCode: Ansi256Color.blue.intValue)
-                ColorSwatch(colorCode: Ansi256Color.pink.intValue)
+                ColorSwatch(colorCode: Ansi256Color.magenta.intValue)
                 ColorSwatch(colorCode: Ansi256Color.cyan.intValue)
                 ColorSwatch(colorCode: Ansi256Color.white.intValue)
+                ColorSwatch(colorCode: Ansi256Color.brown.intValue)
+                ColorSwatch(colorCode: Ansi256Color.orange.intValue)
+                ColorSwatch(colorCode: Ansi256Color.purple.intValue)
+                ColorSwatch(colorCode: Ansi256Color.lightGray.intValue)
+                ColorSwatch(colorCode: Ansi256Color.gray.intValue)
+                ColorSwatch(colorCode: Ansi256Color.darkGray.intValue)
+                ColorSwatch(colorCode: Ansi256Color.black.intValue)
             }
             Text("Standard colors")
             HStack {
