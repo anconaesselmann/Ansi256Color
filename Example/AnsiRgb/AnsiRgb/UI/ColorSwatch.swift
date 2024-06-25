@@ -17,7 +17,7 @@ struct ColorSwatch: View {
     
     var body: some View {
         ZStack {
-            Color(ansi256: colorCode)
+            Color(.displayP3, ansi256: colorCode)
                 .frame(width: size, height: size)
             Text(String(colorCode))
                 .hightControstForegroundColor(for: color)

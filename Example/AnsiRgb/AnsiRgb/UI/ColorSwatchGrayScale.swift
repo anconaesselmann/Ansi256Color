@@ -19,7 +19,7 @@ struct ColorSwatchGrayScale: View {
     var body: some View {
         ZStack {
             let value = Double(scale) / 24
-            Color(ansi256GrayScale: value)
+            Color(.displayP3, ansi256GrayScale: value)
                 .frame(width: size, height: size)
             Text("\(value, specifier: "%.2f")")
                 .hightControstForegroundColor(for: color)

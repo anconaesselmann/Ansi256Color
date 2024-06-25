@@ -11,13 +11,6 @@ struct ContentView: View {
 
     var body: some View {
         VStack {
-            ColorPicker(selection: $vm.pickedColor, supportsOpacity: false) {
-                Text("Pick a color")
-            }
-            HStack {
-                Color(vm.pickedColor).frame(width: 40, height: 40)
-                ColorSwatch(colorCode: vm.pickedAnsiColor.intValue)
-            }
             Text("Named colors")
             HStack {
                 ColorSwatch(colorCode: Ansi256Color.red.intValue)
@@ -72,6 +65,7 @@ struct ContentView: View {
                     ColorSwatchGrayScale(scale: $0)
                 }
             }
+            Spacer()
         }
         .padding()
     }
