@@ -11,11 +11,7 @@ public extension Color {
         let red   = Double(r) / 255
         let green = Double(g) / 255
         let blue  = Double(b) / 255
-        print(r, g, b)
-        print(red, green, blue)
         let c = Ansi256Color(red: red, green: green, blue: blue)
-        print(c.intValue)
-        print(c.rgb)
         self = Color(colorSpace,
             red:   red,
             green: green,
