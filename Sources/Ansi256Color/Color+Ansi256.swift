@@ -4,31 +4,57 @@
 import SwiftUI
 
 public extension Color {
-    init(r: UInt8, g: UInt8, b: UInt8) {
-        self = Color(
-            red:   Double(r) / 255,
-            green: Double(g) / 255,
-            blue:  Double(b) / 255
+    init(
+        _ colorSpace: Color.RGBColorSpace = .sRGB,
+        r: UInt8, g: UInt8, b: UInt8
+    ) {
+        let red   = Double(r) / 255
+        let green = Double(g) / 255
+        let blue  = Double(b) / 255
+        print(r, g, b)
+        print(red, green, blue)
+        let c = Ansi256Color(red: red, green: green, blue: blue)
+        print(c.intValue)
+        print(c.rgb)
+        self = Color(colorSpace,
+            red:   red,
+            green: green,
+            blue:  blue
         )
     }
 
-    init(_ hex: (r: UInt8, g: UInt8, b: UInt8)) {
-        self = Color(r: hex.r, g: hex.g, b: hex.b)
+    init(
+        _ colorSpace: Color.RGBColorSpace = .sRGB,
+        _ hex: (r: UInt8, g: UInt8, b: UInt8)
+    ) {
+        self = Color(colorSpace, r: hex.r, g: hex.g, b: hex.b)
     }
 
-    init(ansi256: Int) {
-        self = Color(Ansi256Color(ansi256).rgb())
+    init(
+        _ colorSpace: Color.RGBColorSpace = .sRGB,
+        ansi256: Int
+    ) {
+        self = Color(colorSpace, Ansi256Color(ansi256).rgb)
     }
 
-    init(ansi256: UInt8) {
-        self = Color(Ansi256Color(ansi256).rgb())
+    init(
+        _ colorSpace: Color.RGBColorSpace = .sRGB,
+        ansi256: UInt8
+    ) {
+        self = Color(colorSpace, Ansi256Color(ansi256).rgb)
     }
 
-    init(ansi256GrayScale value: Double) {
-        self = Color(Ansi256Color(grayScale: value).rgb())
+    init(
+        _ colorSpace: Color.RGBColorSpace = .sRGB,
+        ansi256GrayScale value: Double
+    ) {
+        self = Color(colorSpace, Ansi256Color(grayScale: value).rgb)
     }
 
-    init(ansi256 value: Ansi256Color) {
-        self = Color(value.rgb())
+    init(
+        _ colorSpace: Color.RGBColorSpace = .sRGB,
+        ansi256 value: Ansi256Color
+    ) {
+        self = Color(colorSpace, value.rgb)
     }
 }

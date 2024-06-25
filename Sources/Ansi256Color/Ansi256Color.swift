@@ -23,7 +23,7 @@ public struct Ansi256Color {
         self.value = value
     }
 
-    internal func rgb() -> (UInt8, UInt8, UInt8) {
+    public var rgb: (r: UInt8, g: UInt8, b: UInt8) {
         if (value < 16) {
             return Self.lowRgb[Int(value)]
         }
@@ -53,9 +53,9 @@ public extension Ansi256Color {
     }
 
     init(_ rgb: (r: UInt8, g: UInt8, b: UInt8)) {
-        let ra = UInt8(max((Double(rgb.r) - 55), 0) / 40)
-        let ga = UInt8(max((Double(rgb.g) - 55), 0) / 40)
-        let ba = UInt8(max((Double(rgb.b) - 55), 0) / 40)
+        let ra = UInt8(max((Double(Self.roundedToRgbValues(rgb.r)) - 55), 0) / 40)
+        let ga = UInt8(max((Double(Self.roundedToRgbValues(rgb.g)) - 55), 0) / 40)
+        let ba = UInt8(max((Double(Self.roundedToRgbValues(rgb.b)) - 55), 0) / 40)
         let b = ba
         let g = ga * 6
         let r = ra * 36
@@ -64,9 +64,9 @@ public extension Ansi256Color {
     }
 
     init(red: Double, green: Double, blue: Double) {
-        let r = UInt8(min(255, max(red * 255, 0)))
-        let g = UInt8(min(255, max(green * 255, 0)))
-        let b = UInt8(min(255, max(blue * 255, 0)))
+        let r = Self.clamped(red)
+        let g = Self.clamped(green)
+        let b = Self.clamped(blue)
         self = Ansi256Color(r: r, g: g, b: b)
     }
 
@@ -80,5 +80,33 @@ public extension Ansi256Color {
         }
         let scaled = Int(value * 24)
         self = Ansi256Color(232 + scaled)
+    }
+
+    private static func compressed(_ value: UInt8) -> UInt8 {
+        UInt8(min(255, max(roundedToRgbValues(value) * 255, 0)))
+    }
+
+    private static func clamped(_ value: Double) -> UInt8 {
+        UInt8(min(255, max(value * 255, 0)))
+    }
+
+    private static func roundedToRgbValues(_ value: UInt8) -> UInt8 {
+        let rgbValues: [UInt8] = [
+            0, 95, 135, 175, 215, 255
+        ]
+        guard 
+            let range = zip(
+                rgbValues.dropLast(),
+                rgbValues.dropFirst()
+            )
+            .map({ $0...$1 })
+            .first(where: { $0.contains(value) })
+        else {
+            return value
+        }
+        let middpoint = (range.upperBound - range.lowerBound) / 2 + range.lowerBound
+        return value < middpoint
+            ? range.lowerBound
+            : range.upperBound
     }
 }
