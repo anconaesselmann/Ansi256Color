@@ -10,13 +10,11 @@ class ContentViewModel: ObservableObject {
     var pickedColor: Color = .blue
 
     var pickedAnsiColor: Ansi256Color {
-        guard let components = NSColor(pickedColor).cgColor.components else {
-            return .blue
-        }
+        let (red, green, blue) = pickedColor.rgb
         return Ansi256Color(
-            red: Double(components[0]),
-            green: Double(components[1]),
-            blue: Double(components[2])
+            red: red,
+            green: green,
+            blue: blue
         )
     }
 }

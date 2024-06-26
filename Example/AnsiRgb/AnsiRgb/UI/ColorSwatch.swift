@@ -20,7 +20,7 @@ struct ColorSwatch: View {
             Color(.displayP3, ansi256: colorCode)
                 .frame(width: size, height: size)
             Text(String(colorCode))
-                .hightControstForegroundColor(for: color)
+                .hightContrastForegroundColor(for: color)
         }
     }
 }

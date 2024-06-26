@@ -53,4 +53,50 @@ public extension Color {
     ) {
         self = Color(colorSpace, value.rgb)
     }
+
+    var components: [CGFloat] {
+        #if os(macOS)
+        NSColor(self).cgColor.components ?? [0,0,0]
+        #else
+        UIColor(self).cgColor.components ?? [0,0,0]
+        #endif
+    }
+
+    var rgb: (r: Double, g: Double, b: Double) {
+        let components = components
+        return (
+            r: Double(components[0]),
+            g: Double(components[1]),
+            b: Double(components[2])
+        )
+    }
+
+    var hightContrastFontColor: Color {
+        let (red, green, blue) = rgb
+        // https://en.wikipedia.org/wiki/Relative_luminance
+        let luminance = 0.2126 * red + 0.7152 * green + 0.0722 * blue
+        return luminance < 0.55
+            ? .white
+            : .black
+    }
+
+    var inverted: Color {
+        let (red, green, blue) = rgb
+        return Color(
+            red: 1 - red,
+            green: 1 - green,
+            blue: 1 - blue
+        )
+    }
+}
+
+public extension Ansi256Color {
+    init(_ color: Color) {
+        let (red, green, blue) = color.rgb
+        self = Ansi256Color(
+            red: red,
+            green: green,
+            blue: blue
+        )
+    }
 }

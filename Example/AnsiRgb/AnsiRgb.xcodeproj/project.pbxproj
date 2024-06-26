@@ -19,7 +19,6 @@
 		97435E652C2955BB00EDBE54 /* ColorSwatchGrayScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97435E642C2955BB00EDBE54 /* ColorSwatchGrayScale.swift */; };
 		97435E672C29E29400EDBE54 /* Text+hightControstForegroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97435E662C29E29400EDBE54 /* Text+hightControstForegroundColor.swift */; };
 		97435E692C29E2E100EDBE54 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97435E682C29E2E100EDBE54 /* ContentViewModel.swift */; };
-		97435E6B2C29E4CA00EDBE54 /* Color+hightContrastFontColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97435E6A2C29E4CA00EDBE54 /* Color+hightContrastFontColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +36,6 @@
 		97435E642C2955BB00EDBE54 /* ColorSwatchGrayScale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSwatchGrayScale.swift; sourceTree = "<group>"; };
 		97435E662C29E29400EDBE54 /* Text+hightControstForegroundColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+hightControstForegroundColor.swift"; sourceTree = "<group>"; };
 		97435E682C29E2E100EDBE54 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
-		97435E6A2C29E4CA00EDBE54 /* Color+hightContrastFontColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+hightContrastFontColor.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +71,6 @@
 			children = (
 				97234F162C29288400B363EE /* LoadableResult.swift */,
 				97435E662C29E29400EDBE54 /* Text+hightControstForegroundColor.swift */,
-				97435E6A2C29E4CA00EDBE54 /* Color+hightContrastFontColor.swift */,
 				97234F182C29288500B363EE /* Constants */,
 				97234F1B2C29288500B363EE /* App */,
 				97234F1E2C29288500B363EE /* UI */,
@@ -206,7 +203,6 @@
 				97234F172C29288400B363EE /* LoadableResult.swift in Sources */,
 				97234F202C29288500B363EE /* ContentView.swift in Sources */,
 				97435E632C2955AA00EDBE54 /* ColorSwatch.swift in Sources */,
-				97435E6B2C29E4CA00EDBE54 /* Color+hightContrastFontColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

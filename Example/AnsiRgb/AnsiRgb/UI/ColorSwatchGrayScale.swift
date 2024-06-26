@@ -22,7 +22,7 @@ struct ColorSwatchGrayScale: View {
             Color(.displayP3, ansi256GrayScale: value)
                 .frame(width: size, height: size)
             Text("\(value, specifier: "%.2f")")
-                .hightControstForegroundColor(for: color)
+                .hightContrastForegroundColor(for: color)
         }
     }
 }

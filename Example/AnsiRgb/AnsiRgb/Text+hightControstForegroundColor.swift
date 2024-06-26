@@ -4,7 +4,7 @@
 import SwiftUI
 
 extension Text {
-    func hightControstForegroundColor(for backgroundColor: Color) -> some View {
-        foregroundColor(backgroundColor.hightControstFontColor)
+    func hightContrastForegroundColor(for backgroundColor: Color) -> some View {
+        foregroundColor(backgroundColor.hightContrastFontColor)
     }
 }
